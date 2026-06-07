@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中证1000缠论分析系统 v2</title>
+  <link rel="stylesheet" href="/chanlun-v2-static/styles.css">
+  <script src="/chanlun-v2-static/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace">
+      <header class="toolbar">
+        <div>
+          <h1>中证1000 30分钟缠论分析 v2</h1>
+          <p id="statusText">正在准备数据...</p>
+        </div>
+        <div class="actions">
+          <button id="fetchBtn">补齐K线</button>
+          <button id="drawBtn" class="secondary">画笔</button>
+          <button id="undoBtn" class="secondary">撤销</button>
+          <button id="analyzeBtn" class="secondary">分析</button>
+          <button id="reportBtn">生成报告</button>
+        </div>
+      </header>
+      <div id="chart" class="chart-panel"></div>
+    </section>
+    <aside class="side-panel">
+      <section class="panel-block">
+        <h2>画笔状态</h2>
+        <div id="drawPanel" class="hint">点击“画笔”，再在图表上点击终点。第一笔需要点起点和终点，后续默认从上一笔终点开始。</div>
+      </section>
+      <section class="panel-block">
+        <h2>Obsidian</h2>
+        <input id="obsidianInput" placeholder="Obsidian vault 路径，例如 /Users/you/Documents/Vault">
+        <button id="saveConfigBtn" class="full-button secondary">保存路径</button>
+      </section>
+      <section class="panel-block">
+        <h2>结构摘要</h2>
+        <div id="summaryPanel"></div>
+      </section>
+      <section class="panel-block">
+        <h2>线段 / 中枢 / 买卖点</h2>
+        <div id="analysisPanel"></div>
+      </section>
+      <section class="panel-block">
+        <h2>手工笔</h2>
+        <div id="penList" class="pen-list"></div>
+      </section>
+    </aside>
+  </main>
+  <script src="/chanlun-v2-static/app.js"></script>
+</body>
+</html>
+
